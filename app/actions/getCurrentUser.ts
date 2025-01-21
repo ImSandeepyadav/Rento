@@ -10,7 +10,7 @@ export async function getSession() {
 export default async function getCurrentUser() {
   try {
     const session = await getSession();
-
+    
     if (!session?.user?.email) {
       return null;
     }
@@ -25,14 +25,20 @@ export default async function getCurrentUser() {
       return null;
     }
 
+    // सुनिश्चित करें कि favoriteIds एक एरे है
+    const favoriteIds = Array.isArray(currentUser.favoriteIds) 
+      ? currentUser.favoriteIds 
+      : [];
+
     return {
       ...currentUser,
+      favoriteIds,
       createdAt: currentUser.createdAt.toISOString(),
       updatedAt: currentUser.updatedAt.toISOString(),
-      emailVerified: 
-        currentUser.emailVerified?.toISOString() || null,
+      emailVerified: currentUser.emailVerified?.toISOString() || null,
     };
-  } catch (error: any) {
+  } catch (error) {
+    console.error('Error in getCurrentUser:', error);
     return null;
   }
 }
