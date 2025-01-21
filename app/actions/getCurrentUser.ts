@@ -25,7 +25,6 @@ export default async function getCurrentUser() {
       return null;
     }
 
-    // सुनिश्चित करें कि favoriteIds एक एरे है
     const favoriteIds = Array.isArray(currentUser.favoriteIds) 
       ? currentUser.favoriteIds 
       : [];

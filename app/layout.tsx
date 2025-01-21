@@ -14,6 +14,7 @@ import ClientOnly from './components/ClientOnly';
 import getCurrentUser from '@/app/actions/getCurrentUser';
 import Footer from './components/footer/footer';
 
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'ReNto',
