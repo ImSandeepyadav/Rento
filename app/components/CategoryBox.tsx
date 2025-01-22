@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-
 import qs from 'query-string';
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
@@ -49,22 +48,21 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
       onClick={handleClick}
       className={`
         flex 
-        flex-col 
+        flex-row 
         items-center 
-        justify-center 
-        gap-2
-        p-3
-        border-b-2
-        text-white
-        hover:text-neutral-200
+        w-full
+        gap-3
+        p-4
+        hover:bg-[#8d5959]
+        rounded-lg
         transition
         cursor-pointer
-        ${selected ? 'border-b-neutral-800' : 'border-transparent'}
-        ${selected ? 'text-neutral-800' : 'text-neutral-500'}
+        ${selected ? 'bg-[#8d5959]' : 'transparent'}
+        ${selected ? 'text-white' : 'text-neutral-200'}
       `}
     >
       <Icon size={26} />
-      <div className="font-medium text-sm">
+      <div className="font-medium text-sm whitespace-nowrap">
         {label}
       </div>
     </div>
