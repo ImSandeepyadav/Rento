@@ -43,35 +43,30 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
               transition
               border-dashed 
               border-2 
+              p-20 
               border-neutral-300
-              rounded-lg
-              aspect-square
-              overflow-hidden
-              w-full
               flex
               flex-col
               justify-center
               items-center
               gap-4
-              text-neutral-600
+              text-white
             "
           >
-            {!value && (
-              <>
-                <TbPhotoPlus size={50} />
-                <div className="font-semibold text-lg">
-                  Click to upload
-                </div>
-              </>
-            )}
+            <TbPhotoPlus
+              size={50}
+            />
+            <div className="font-semibold text-lg">
+              Click to upload
+            </div>
             {value && (
-              <div className="absolute inset-0 w-full h-full">
+              <div className="
+              absolute inset-0 w-full h-full">
                 <Image
                   fill 
                   style={{ objectFit: 'cover' }} 
                   src={value} 
-                  alt="House"
-                  className="w-full h-full"
+                  alt="House" 
                 />
               </div>
             )}
